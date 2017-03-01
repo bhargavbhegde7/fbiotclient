@@ -1,0 +1,17 @@
+{
+  "name": "iotclient",
+  "version": "0.0.0",
+  "description": "iot client",
+  "main": "client.js",
+  "scripts": {
+    "test": "Lol wut?"
+  },
+  "author": "bhegde",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "gpio": "^0.2.7",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3"
+  }
+}
