@@ -1,5 +1,6 @@
 var gpio = require("gpio");
-var socket = require('socket.io-client')('http://fbchatbot-96204.app.xervo.io');
+//var socket = require('socket.io-client')('http://fbchatbot-96204.app.xervo.io');
+var socket = require('socket.io-client')('https://fbchatbot1.appspot.com');
 
 var turnLightOn = function(pinNumber){
     gpioPin = gpio.export(pinNumber,{
@@ -18,15 +19,15 @@ socket.on('connect', function(){
 socket.on('fb-message', function(data){
 	var msg = JSON.parse(data).text;
 	console.log(msg);
-	
+
 	if(msg.indexOf('green') > -1){
 		turnLightOn(18);
 	}
 
 	if(msg.indexOf('red') > -1){
 		turnLightOn(16);
-	}	
+	}
 });
 socket.on('disconnect', function(){
-	console.log("disconnected yo!");
+	console.log("disconnected!");
 });
